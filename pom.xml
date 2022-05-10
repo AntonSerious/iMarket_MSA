@@ -13,9 +13,6 @@
         <module>cart-service</module>
         <module>core-service</module>
         <module>api</module>
-        <module>cart-service</module>
-        <module>core-service</module>
-        <module>api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -56,6 +53,11 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
         </dependency>
 
 
