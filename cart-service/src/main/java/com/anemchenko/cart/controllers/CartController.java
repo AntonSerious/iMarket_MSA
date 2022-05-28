@@ -16,7 +16,6 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/cart")
-@CrossOrigin("*")
 public class CartController {
     private final CartService cartService;
     private final ProductServiceIntegration productServiceIntegration;
@@ -38,11 +37,11 @@ public class CartController {
         cartService.addToCart(getCurrentCartUuid(username, uuid), product);
     }
     @GetMapping("/{uuid}/decrement/{productId}")
-    public void decrement(@RequestHeader String username, @PathVariable String uuid, @PathVariable Long productId) {
+    public void decrement(@RequestHeader(required = false) String username, @PathVariable String uuid, @PathVariable Long productId) {
         cartService.decrementItem(getCurrentCartUuid(username, uuid), productId);
     }
     @GetMapping("/{uuid}/remove/{id}")
-    public void remove(@RequestHeader String username, @PathVariable String uuid, @PathVariable Long id){
+    public void remove(@RequestHeader(required = false) String username, @PathVariable String uuid, @PathVariable Long id){
         cartService.removeItemFromCart(getCurrentCartUuid(username, uuid), id);
     }
     @GetMapping("/{uuid}/merge")
@@ -54,7 +53,7 @@ public class CartController {
     }
 
     @GetMapping("/{uuid}/clear")
-    public void clear(@RequestHeader String username, @PathVariable String uuid) {
+    public void clear(@RequestHeader(required = false) String username, @PathVariable String uuid) {
         cartService.clearCart(getCurrentCartUuid(username, uuid));
     }
 
