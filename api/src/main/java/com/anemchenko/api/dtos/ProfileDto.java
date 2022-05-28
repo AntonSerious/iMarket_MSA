@@ -2,8 +2,8 @@ package com.anemchenko.api.dtos;
 
 public class ProfileDto {
     private String username;
-    private String firstName;
-    private String lastName;
+//    private String firstName;
+//    private String lastName;
     private String email;
 
     public String getUsername() {
@@ -14,21 +14,21 @@ public class ProfileDto {
         this.username = username;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
 
     public String getEmail() {
         return email;
@@ -41,10 +41,10 @@ public class ProfileDto {
     public ProfileDto() {
     }
 
-    public ProfileDto(String username, String firstName, String lastName, String email) {
+    public ProfileDto(String username, String email) {
         this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
         this.email = email;
     }
 }

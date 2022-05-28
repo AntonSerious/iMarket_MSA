@@ -30,30 +30,29 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "Order_Id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "Username")
+    private String username;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items;
 
-    @Column(name = "address")
+    @Column(name = "Address")
     private String address;
 
-    @Column(name = "phone")
+    @Column(name = "Phone")
     private String phone;
 
-    @Column(name = "price")
+    @Column(name = "Price")
     private int price;
 
     @CreationTimestamp
-    @Column(name = "created_at")
+    @Column(name = "Created_at")
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at")
+    @Column(name = "Modified_at")
     private LocalDateTime updatedAt;
 }
