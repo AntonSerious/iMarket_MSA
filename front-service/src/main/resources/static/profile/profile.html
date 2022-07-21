@@ -17,6 +17,8 @@
                 <th scope="col">ID заказа</th>
                 <th scope="col">Продукты</th>
                 <th scope="col">Стоимость</th>
+                <th scope="col">Статус</th>
+                <th scope="col"></th>
             </tr>
         </thread>
         <tbody>
@@ -33,16 +35,20 @@
                         </tr>
                     </thread>
                     <tbody>
-                    <tr ng-repeat="i in ord.items">
-                        <td>{{i.productId}}</td>
-                        <td>{{i.productTitle}}</td>
-                        <td>{{i.quantity}}</td>
-                        <td>{{i.pricePerProduct}}</td>
-                    </tr>
+                        <tr ng-repeat="i in ord.items">
+                            <td>{{i.productId}}</td>
+                            <td>{{i.productTitle}}</td>
+                            <td>{{i.quantity}}</td>
+                            <td>{{i.pricePerProduct}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </td>
             <th scope="row">{{ord.price}}</th>
+            <th scope="row">{{ord.status}}</th>
+            <th scope="row">
+                <button class="btn btn-primary" ng-show="ord.status == 'Draft'" ng-click="toPay(ord.id)">Оплатить</button>
+            </th>
         </tr>
         </tbody>
     </table>

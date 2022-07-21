@@ -1,4 +1,4 @@
-angular.module('market-front').controller('profileController', function ($scope, $http) {
+angular.module('market-front').controller('profileController', function ($scope, $http, $location) {
 
     $scope.loadOrders = function () {
         $http({
@@ -17,6 +17,9 @@ angular.module('market-front').controller('profileController', function ($scope,
             $scope.userProfile = response.data;
         });
     };
+    $scope.toPay = function (orderId){
+        $location.path('/order_pay/' + orderId);
+    }
 
     $scope.loadOrders();
     $scope.loadMyProfile();

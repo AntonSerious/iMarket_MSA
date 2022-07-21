@@ -10,20 +10,21 @@ services:
     environment:
       - MYSQL_DATABASE=imarket
       - MYSQL_ROOT_PASSWORD=admin
-
+    volumes:
+      - ./tmp/db_dump:/var/lib/mysql
     healthcheck:
       test: [ "CMD", "root" ,"ping", "-h", "admin" ]
       timeout: 45s
       interval: 10s
       retries: 10
 
-  flyway:
-    image: boxfuse/flyway
-    command: -url=jdbc:mysql://mysql:3306?allowPublicKeyRetrieval=true&useSSL=false -schemas=imarket -user=root -password=admin -connectRetries=10 migrate
-    volumes:
-      - ./flyway:/flyway/sql
-    depends_on:
-      - mysql
+  #flyway:
+  #  image: boxfuse/flyway
+  #  command: -url=jdbc:mysql://mysql:3306?allowPublicKeyRetrieval=true&useSSL=false -schemas=imarket -user=root -password=admin -connectRetries=10 migrate
+  #  volumes:
+  #    - ./flyway:/flyway/sql
+  #  depends_on:
+  #    - mysql
 
   redis:
     image: 'bitnami/redis:latest'

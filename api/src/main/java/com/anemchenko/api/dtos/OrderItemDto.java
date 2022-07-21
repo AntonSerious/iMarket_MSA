@@ -1,11 +1,13 @@
 package com.anemchenko.api.dtos;
 
+import java.math.BigDecimal;
+
 public class OrderItemDto {
     private Long productId;
     private String productTitle;
     private int quantity;
-    private int pricePerProduct;
-    private int price;
+    private Double pricePerProduct;
+    private Double price;
 
     public Long getProductId() {
         return productId;
@@ -31,26 +33,26 @@ public class OrderItemDto {
         this.quantity = quantity;
     }
 
-    public int getPricePerProduct() {
+    public Double getPricePerProduct() {
         return pricePerProduct;
     }
 
-    public void setPricePerProduct(int pricePerProduct) {
+    public void setPricePerProduct(Double pricePerProduct) {
         this.pricePerProduct = pricePerProduct;
     }
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
     public OrderItemDto() {
     }
 
-    public OrderItemDto(Long productId, String productTitle, int quantity, int pricePerProduct, int price) {
+    public OrderItemDto(Long productId, String productTitle, int quantity, Double pricePerProduct, Double price) {
         this.productId = productId;
         this.productTitle = productTitle;
         this.quantity = quantity;

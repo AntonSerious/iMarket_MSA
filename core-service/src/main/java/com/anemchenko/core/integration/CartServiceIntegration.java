@@ -29,7 +29,7 @@ public class CartServiceIntegration {
     }
     public void clearUserCart(String username){
         cartServiceWebClient.get()
-                .uri("api/v1/cart/" + username + "/clear")
+                .uri("/api/v1/cart/" + username + "/clear")
                 .header("username", username)
                 .retrieve()
                 .bodyToMono(CartDto.class)

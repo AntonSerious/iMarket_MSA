@@ -8,6 +8,9 @@ spring:
     url: jdbc:mysql://localhost:3307/imarket
     username: root
     password: admin
+  jackson:
+    deserialization:
+      USE_BIG_DECIMAL_FOR_FLOATS: true
   jpa:
     show-sql: true
     properties:

@@ -4,6 +4,7 @@ import com.anemchenko.api.dtos.OrderItemDto;
 import com.anemchenko.api.dtos.ProductDto;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 @Data
 public class Cart {
     private List<OrderItemDto> items;
-    private int totalPrice;
+    private double totalPrice;
 
     public Cart() {
         this.items = new ArrayList<>();
