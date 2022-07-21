@@ -1,5 +1,6 @@
 package com.anemchenko.api.dtos;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class OrderDto {
@@ -7,7 +8,9 @@ public class OrderDto {
     private List<OrderItemDto> items;
     private String address;
     private String phone;
-    private int price;
+    private Double price;
+
+    private String status;
 
     public Long getId() {
         return id;
@@ -41,22 +44,31 @@ public class OrderDto {
         this.phone = phone;
     }
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public OrderDto() {
     }
 
-    public OrderDto(Long id, List<OrderItemDto> items, String address, String phone, int price) {
+    public OrderDto(Long id, List<OrderItemDto> items, String address, String phone, Double price, String status) {
         this.id = id;
         this.items = items;
         this.address = address;
         this.phone = phone;
         this.price = price;
+        this.status = status;
     }
 }

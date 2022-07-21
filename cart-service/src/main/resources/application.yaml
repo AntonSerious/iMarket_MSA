@@ -8,3 +8,8 @@ utils:
 integration:
   product-service:
     url: http://localhost:8189/market-core
+
+Spring:
+  jackson:
+    deserialization:
+      USE_BIG_DECIMAL_FOR_FLOATS: true

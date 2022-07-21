@@ -6,40 +6,41 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "order_items")
+@Table(name = "orders_details")
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "Order_Detail_Id")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "Order_Id")
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "Product_Id")
     private Product product;
 
-    @Column(name = "quantity")
+    @Column(name = "Quantity")
     private int quantity;
 
-    @Column(name = "price_per_product")
-    private int pricePerProduct;
+    @Column(name = "Price_Per_Product")
+    private Double pricePerProduct;
 
-    @Column(name = "price")
-    private int price;
+    @Column(name = "Price")
+    private Double price;
 
     @CreationTimestamp
-    @Column(name = "created_at")
+    @Column(name = "Created_at")
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at")
+    @Column(name = "Modified_at")
     private LocalDateTime updatedAt;
 }

@@ -1,10 +1,11 @@
 package com.anemchenko.api.dtos;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class CartDto {
     private List<OrderItemDto> items;
-    private int totalPrice;
+    private Double totalPrice;
 
     public List<OrderItemDto> getItems() {
         return items;
@@ -14,18 +15,18 @@ public class CartDto {
         this.items = items;
     }
 
-    public int getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
     public CartDto() {
     }
 
-    public CartDto(List<OrderItemDto> items, int totalPrice) {
+    public CartDto(List<OrderItemDto> items, Double totalPrice) {
         this.items = items;
         this.totalPrice = totalPrice;
     }
